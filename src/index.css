@@ -1,1 +1,90 @@
 @import "tailwindcss";
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', 'Helvetica Neue', Arial, system-ui, sans-serif;
+  --font-display: 'Plus Jakarta Sans', 'Helvetica Neue', Arial, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --color-matcha-50: #ecfdf5;
+  --color-matcha-100: #d1fae5;
+  --color-matcha-200: #a7f3d0;
+  --color-matcha-300: #6ee7b7;
+  --color-matcha-400: #34d399;
+  --color-matcha-500: #10b981;
+  --color-matcha-600: #059669;
+  --color-matcha-700: #047857;
+  --color-matcha-800: #065f46;
+  --color-matcha-900: #064e3b;
+
+  --color-boba-50: #fffbeb;
+  --color-boba-100: #fef3c7;
+  --color-boba-200: #fde68a;
+  --color-boba-300: #fcd34d;
+  --color-boba-400: #fbbf24;
+  --color-boba-500: #f59e0b;
+  --color-boba-600: #d97706;
+  --color-boba-700: #b45309;
+  --color-boba-800: #92400e;
+  --color-boba-900: #78350f;
+
+  --shadow-premium: 0 4px 10px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  --shadow-premium-hover: 0 10px 20px -3px rgba(16, 185, 129, 0.1), 0 4px 6px -2px rgba(16, 185, 129, 0.05);
+  --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+/* Geometric background pattern */
+.geo-grid {
+  position: fixed;
+  inset: 0;
+  background-color: #f4f7f6; /* Geometric Balance Neutral Bg */
+  background-image: 
+    linear-gradient(to right, rgba(16, 185, 129, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(16, 185, 129, 0.02) 1px, transparent 1px);
+  background-size: 30px 30px;
+  z-index: 0;
+  pointer-events: none;
+}
+.geo-circle {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(16, 185, 129, 0.06);
+  pointer-events: none;
+}
+
+/* Smooth transitions */
+.smooth-transition {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Custom animations */
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: .85; transform: scale(0.98); }
+}
+.animate-pulse-subtle {
+  animation: pulse-subtle 2s infinite ease-in-out;
+}
+
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+.animate-bounce-slow {
+  animation: bounce-slow 3s infinite ease-in-out;
+}
